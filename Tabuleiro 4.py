@@ -44,6 +44,8 @@ class tabuleiro:
     def botão_apertado(self, x):
         print(x)
         lista = Jogo.Jogo(x)
+        self.jogo.recebe_jogada(x)
+        lista= self.jogo.resultados()
         self.conteudo_label.set(self.conteudo_caixa_texto.get(lista[-1]))
         self.button[x].configure(text=lista[x])
         
