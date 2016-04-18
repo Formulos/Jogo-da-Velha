@@ -20,6 +20,7 @@ class tabuleiro:
         for j in range(3):
             self.window.columnconfigure(j, weight=1)
         self.button= []
+        self.Jogo = Jogo
         
     #caixa texto
         self.conteudo_caixa_texto = tk.StringVar()
@@ -36,10 +37,9 @@ class tabuleiro:
                 button[-1].configure(command= lambda numero= button[-1].numero: self.botão_apertado(numero))
                 button[-1].configure(text="")
                 button[-1].grid(row=i, column=j,sticky="nsew")
-                
-        
-                
-        
+
+
+
 
     def botão_apertado(self, x):
         print(x)
