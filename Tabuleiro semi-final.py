@@ -14,19 +14,20 @@ class tabuleiro:
     #linhas e colunas
         self.window = tk.Tk()
         self.window.title("Jogo da Velha")
-        self.window.geometry("500x400+350+150")
+        self.window.geometry("300x350+350+150")
         for i in range (4):
-            self.window.rowconfigure(i, weight=1)
+            self.window.rowconfigure(i,minsize = 100,weight=1)
         for j in range(3):
-            self.window.columnconfigure(j, weight=1)
+            self.window.columnconfigure(j,minsize = 100,weight=1)
         self.button= []
         self.Jogo = Jogo
         
-    #caixa texto
-        self.conteudo_caixa_texto = tk.StringVar()
-        caixa_texto = tk.Entry(self.window)
-        caixa_texto.configure(textvariable=self.conteudo_caixa_texto)
-        caixa_texto.grid(row=1, column=0,columnspan=3, padx=20, sticky="s")
+    #label
+        self.conteudo_label = tk.StringVar()
+        label = tk.Label(self.window)
+        label.configure(textvariable=self.conteudo_label)
+        label.configure(font="Courier 20 bold")
+        label.grid(row=1, column=0,columnspan=3, padx=20, sticky="s")
         
     #botão
         button= self.button
@@ -40,12 +41,11 @@ class tabuleiro:
 
 
 
-
     def botão_apertado(self, x):
         print(x)
-        self.jogo.recebe_jogada(x)
-        lista= self.jogo.resultados()
-        self.conteudo_label.set(self.conteudo_caixa_texto.get(lista[-1]))
+#        Jogo.recebe_jogada(x)
+#        lista= self.jogo.resultados()
+        self.conteudo_label.set(self.get('1'))
         self.button[x].configure(text=lista[x])
         
     def iniciar(self):
