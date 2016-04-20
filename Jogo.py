@@ -11,6 +11,7 @@ class Jogo:
         self.turno="X"
         self.turnospassados= 0
         self.tabuleiro=[]
+        self.status=-1
         for i in range(9):
             self.tabuleiro.append("")
         #
@@ -19,15 +20,15 @@ class Jogo:
         if self.turno == "X":
             self.turno= "O"
         else:
-            self.turno="X"
+            self.turno= "X"
     #
     
     def recebe_jogada(self, square):
-        if self.tabuleiro[square] == "":
+        if self.tabuleiro[square] == "" and self.status == -1:
             self.tabuleiro[square]= self.turno
             self.muda_turno()
             self.turnospassados+= 1
-            self.devolve_resultados(self.verifica_ganhador())
+            self.status= self.verifica_ganhador()
     #
             
     def verifica_ganhador(self):
@@ -55,25 +56,29 @@ class Jogo:
                     linha=tabuleiro[2]+tabuleiro[4]+tabuleiro[6]
                 #   
             #
-            if linha == "XXX" or linha == "OOO":
-                return 1 #vitoria
+            if linha == "XXX"
+                return 1 #vitoria X
+                
+            if linha == "OOO":
+                return 2 #vitoria O
                 
             if self.turnospassados == 9:
-                return 2 #empate
+                return 0 #empate
         #
-        return 0 #nada
+        return -1 #nada
         
-    def devolve_resultados(self, status):
-        output=[]
+    def devolve_resultados(self):
+        output=""
         
         for i in self.tabuleiro:
             output.append(i)
         
-        if status == 0:
+        if self.status == -1:
             output+= "Próxima jogada: "+self.turno
-        elif status == 1:
-            self.mudaturno()
+        elif self.status >= 1:
+            self.muda_turno()
             output+= "Vitória de "+self.turno+". Parabéns!"
+            self.muda_turno()
         else:
             output+="Empate!"
             
@@ -81,7 +86,7 @@ class Jogo:
     #
         
     def limpa_jogadas(self):
-        self.turno="X"
+        self.status= -1
         self.turnospassados= 0
         self.tabuleiro=[]
         for i in range(9):
