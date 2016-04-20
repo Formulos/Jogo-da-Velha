@@ -6,13 +6,13 @@ Created on Fri Apr 15 09:59:08 2016
 """
 
 import tkinter as tk
-import Jogo
+from jogo import Jogo
 
 
-class tabuleiro:
+class Tabuleiro:
     
     def __init__(self):
-        self.Jogo = Jogo.JogoVelha()
+        self.Jogo = Jogo()
         self.window = tk.Tk()
         self.window.title("Jogo da Velha")
         self.window.geometry("300x350+350+150")
@@ -47,7 +47,7 @@ class tabuleiro:
     def botão_apertado(self, x):
         print(x)
         self.Jogo.recebe_jogada(x)
-        lista= Jogo.resultados()
+        lista= Jogo.devolve_resultados()
         self.conteudo_label.set(self.conteudo_caixa_texto.get(lista[-1]))
         self.button[x].configure(text=lista[x])
         
@@ -55,5 +55,5 @@ class tabuleiro:
         self.window.mainloop()
 
 
-app = tabuleiro()
+app = Tabuleiro()
 app.iniciar()

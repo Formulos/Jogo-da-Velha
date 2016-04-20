@@ -70,7 +70,7 @@ class Jogo:
             output.append(i)
         
         if status == 0:
-            output+= "Próxima jogada: "+self.turno()
+            output+= "Próxima jogada: "+self.turno
         elif status == 1:
             self.mudaturno()
             output+= "Vitória de "+self.turno+". Parabéns!"
