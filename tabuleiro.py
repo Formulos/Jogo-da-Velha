@@ -26,12 +26,11 @@ class Tabuleiro:
         
     #label
         self.label = tk.Label(self.window)
-        self.conteudo_label = tk.StringVar()
-        self.label.configure(textvariable=self.conteudo_label)
-        self.label.configure(font='Courier 20 bold')
-        self.label.configure(text= 'teste')
-        self.label.grid(row=4, column=0,columnspan=3, padx=20, sticky="s")
-        
+        self.label.configure(font="Courier 14 bold")
+        self.label.grid(row=3, column=0, columnspan=3, sticky="n")
+        self.label.configure(text="Courier 20 bold")
+
+
     #botão
         button= self.button
         for i in range(3):
@@ -45,11 +44,15 @@ class Tabuleiro:
 
 
     def botão_apertado(self, x):
-        print(x)
+        #print(x)
         self.Jogo.recebe_jogada(x)
         lista = self.Jogo.devolve_resultados()
-        #self.conteudo_label.set(self.conteudo_caixa_texto.get(lista[-1]))
+        #print(lista)
+        #print(len(lista))
         self.button[x].configure(text=lista[x])
+        print(lista[-1])
+        
+        self.label.config(text = lista[-1])
         
     def iniciar(self):
         self.window.mainloop()
