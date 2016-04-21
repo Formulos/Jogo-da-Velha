@@ -6,7 +6,7 @@ Created on Fri Apr 15 09:59:08 2016
 """
 
 import tkinter as tk
-from jogo import Jogo
+from Jogo import Jogo
 
 
 class Tabuleiro:
@@ -47,8 +47,8 @@ class Tabuleiro:
     def botão_apertado(self, x):
         print(x)
         self.Jogo.recebe_jogada(x)
-        lista= Jogo.devolve_resultados()
-        self.conteudo_label.set(self.conteudo_caixa_texto.get(lista[-1]))
+        lista = self.Jogo.devolve_resultados()
+        #self.conteudo_label.set(self.conteudo_caixa_texto.get(lista[-1]))
         self.button[x].configure(text=lista[x])
         
     def iniciar(self):
