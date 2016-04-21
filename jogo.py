@@ -29,6 +29,8 @@ class Jogo:
             self.muda_turno()
             self.turnospassados+= 1
             self.status= self.verifica_ganhador()
+        elif self.status != -1:
+            self.limpa_jogadas()
     #
             
     def verifica_ganhador(self):
