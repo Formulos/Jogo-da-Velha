@@ -6,7 +6,7 @@ Created on Fri Apr 15 09:59:08 2016
 """
 
 import tkinter as tk
-from Jogo import Jogo
+from jogo import Jogo
 
 
 class Tabuleiro:
