@@ -68,19 +68,19 @@ class Jogo:
         return -1 #nada
         
     def devolve_resultados(self):
-        output=""
+        output=[]
         
         for i in self.tabuleiro:
             output.append(i)
         
         if self.status == -1:
-            output+= "Próxima jogada: "+self.turno
+            output[-1]+= "Próxima jogada: "+self.turno
         elif self.status >= 1:
             self.muda_turno()
-            output+= "Vitória de "+self.turno+". Parabéns!"
+            output[-1]+= "Vitória de "+self.turno+". Parabéns!"
             self.muda_turno()
         else:
-            output+="Empate!"
+            output[-1]+="Empate!"
             
         return output
     #
