@@ -18,7 +18,7 @@ class Tabuleiro:
         self.window.geometry("300x350+350+150")
         
     #linhas e colunas
-        for i in range (4):
+        for i in range (3):
             self.window.rowconfigure(i,minsize = 100,weight=1)
         for j in range(3):
             self.window.columnconfigure(j,minsize = 100,weight=1)
@@ -46,7 +46,8 @@ class Tabuleiro:
     def botão_apertado(self, x):
         self.Jogo.recebe_jogada(x)
         lista = self.Jogo.devolve_resultados()
-        self.button[x].configure(text=lista[x])
+        for i in range(9):
+            self.button[i].configure(text=lista[i])
         self.label.config(text = lista[-1])
         
     def iniciar(self):
