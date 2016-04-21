@@ -56,6 +56,7 @@ class Jogo:
                     linha=tabuleiro[2]+tabuleiro[4]+tabuleiro[6]
                 #   
             #
+            if linha == "XXX":
                 return 1 #vitoria X
                 
             if linha == "OOO":
