@@ -28,7 +28,7 @@ class Tabuleiro:
         self.label = tk.Label(self.window)
         self.label.configure(font="Courier 14 bold")
         self.label.grid(row=3, column=0, columnspan=3, sticky="n")
-        self.label.configure(text="Courier 20 bold")
+        self.label.configure(text="Primeira jogada: X")
 
 
     #botão
@@ -44,14 +44,9 @@ class Tabuleiro:
 
 
     def botão_apertado(self, x):
-        #print(x)
         self.Jogo.recebe_jogada(x)
         lista = self.Jogo.devolve_resultados()
-        #print(lista)
-        #print(len(lista))
         self.button[x].configure(text=lista[x])
-        print(lista[-1])
-        
         self.label.config(text = lista[-1])
         
     def iniciar(self):
