@@ -1,7 +1,11 @@
-Jogo-da-Velha
-Por Paulo Tozzo e Alexandre Young
+﻿Jogo-da-Velha
 
 
-Esse programa é um simples jogo da velha,ele esta dividido em duas partes, "jogo" que cuida de toda parte logica
-e manda o que deve ser escrito e "tabuleiro" que cuida da interface gráfica.Para jogar o jogo é preciso ter os dois arquivos na
-mesma pasta e rodar o "tabuleiro",tambem se no final de uma partida um botão for presionado novamente o jogo ira recomeçar.
+
+Por Paulo Tozzo Ponciano (Formulos) e Alexandre Young Coelho da Costa (Yiaannn)
+
+Este programa é um simples jogo da velha, para jogar basta que dois jogadores apertem nas casas que desejam marcar nos seus determinados turnos, uma vez que o jogo acabe pode-se limpar a tela para um novo jogo clicando qualquer das casas
+
+O código está dividido em dois arquivos, tabuleiro.py e jogo.py que, respectivamente, contém a classe Tabuleiro que cuida do layout gráfico e a classe Jogo que cuida da lógica interna
+
+Para executar o jogo baixe ambos os arquivos em uma mesma pasta e rode tabuleiro.py
