@@ -73,6 +73,7 @@ class Jogo:
         for i in self.tabuleiro:
             output.append(i)
         
+        output.append("")
         if self.status == -1:
             output[-1]+= "Próxima jogada: "+self.turno
         elif self.status >= 1:
